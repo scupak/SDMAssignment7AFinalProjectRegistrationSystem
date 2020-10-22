@@ -28,6 +28,53 @@ namespace XUnitTestProject
         }
 
         [Fact]
+        public void AddNegativeIDandZipcodeExceptionTest()
+        {
+            // arrange
+            IStudentRepository repo = repoMock.Object;
+            IStudentService service = new StudentService(repo);
+
+            Student s = new Student()
+            {
+                PostalDistrict = "København f",
+                Name = "Gork",
+                Email = "Gork@gork.dk",
+                Address = "Gorkvej 12",
+                ZipCode = -6790,
+                StudentId = -1
+
+            };
+
+            var ex = Assert.Throws<ArgumentException>(() =>
+            {
+                service.Add(s);
+            });
+
+            Assert.Equal("Id and ZipCode must be positive", ex.Message);
+        }
+
+        [Fact]
+        public void AddWithoutFieldsExceptionTest()
+        {
+            // arrange
+            IStudentRepository repo = repoMock.Object;
+            IStudentService service = new StudentService(repo);
+
+            Student s = new Student()
+            {
+                Email = "Gork@gork.dk"
+
+            };
+
+            var ex = Assert.Throws<ArgumentException>(() =>
+            {
+                service.Add(s);
+            });
+
+            Assert.Equal("Id, ZipCode, name, address and postalDistrict are mandatory fields", ex.Message);
+        }
+
+        [Fact]
         public void AddTest()
         {
             // arrange
@@ -36,8 +83,13 @@ namespace XUnitTestProject
 
             Student s = new Student()
             {
+                PostalDistrict = "København f",
+                Name  = "Gork",
+                Email = "Gork@gork.dk",
+                Address = "Gorkvej 12",
+                ZipCode = 6790,
                 StudentId = 1
-
+                
             };
 
             // act

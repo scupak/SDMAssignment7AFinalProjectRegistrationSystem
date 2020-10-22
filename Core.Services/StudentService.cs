@@ -28,6 +28,16 @@ namespace Core.Services
 
        public void Add(Student s)
        {
+           if (s.Name == null || s.Address == null || s.PostalDistrict == null || s.StudentId == 0)
+           {
+               throw new ArgumentException("Id, ZipCode, name, address and postalDistrict are mandatory fields");
+           }
+
+           if (s.StudentId < 0 || s.ZipCode < 0)
+           {
+               throw new ArgumentException("Id and ZipCode must be positive");
+           }
+
            Repository.Add(s);
        }
 
