@@ -45,5 +45,42 @@ namespace XUnitTestProject
             repoMock.Verify(repo => repo.Add(It.Is<Student>(student =>  student == s)), Times.Once);
 
         }
+
+        [Fact]
+        public void GetAllTest()
+        {
+            // arrange
+            IStudentRepository repo = repoMock.Object; 
+            IStudentService service = new StudentService(repo);
+
+            Student s = new Student()
+            {
+                StudentId = 1
+
+            };
+
+            Student s2 = new Student()
+            {
+                StudentId = 2
+
+            };
+
+            dataStore = new List<Student>
+            {
+                s,
+                s2
+
+            };
+
+
+            // act
+            service.GetAll();
+
+            // asset 
+            repoMock.Verify(repo => repo.GetAll(), Times.Once);
+
+        }
+
+        
     }
 }
