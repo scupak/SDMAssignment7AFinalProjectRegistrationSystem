@@ -63,6 +63,8 @@ namespace XUnitTestProject
             repoMock.Verify(repo => repo.GetById(It.Is<int>(id => id == 1)), Times.Once);
 
         }
+
+        [Fact]
         public void GetAllTest()
         {
             // arrange
