@@ -17,7 +17,7 @@ namespace Core.Services
 
        public IEnumerable<Student> GetAll()
        {
-           throw new NotImplementedException();
+           return Repository.GetAll();
        }
 
        public Student GetById(int id)
@@ -27,7 +27,7 @@ namespace Core.Services
 
        public void Add(Student s)
        {
-           throw new NotImplementedException();
+           Repository.Add(s);
        }
 
        public void Update(Student s)
