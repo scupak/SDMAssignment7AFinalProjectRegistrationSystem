@@ -54,7 +54,7 @@ namespace Core.Services
 
        public void Remove(Student s)
        {
-           throw new NotImplementedException();
+           Repository.Remove(s);
        }
    }
 }
