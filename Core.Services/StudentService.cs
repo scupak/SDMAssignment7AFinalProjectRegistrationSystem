@@ -32,7 +32,7 @@ namespace Core.Services
 
        public void Update(Student s)
        {
-           throw new NotImplementedException();
+           Repository.Update(s);
        }
 
        public void Remove(Student s)

@@ -100,6 +100,30 @@ namespace XUnitTestProject
 
         }
 
+
+        [Fact]
+        public void UpdateTest()
+        {
+            // arrange
+            IStudentRepository repo = repoMock.Object; 
+            IStudentService service = new StudentService(repo);
+
+            Student s = new Student()
+            {
+                StudentId = 1
+
+            };
+
+
+
+            // act
+            service.Update(s);
+
+            // asset 
+            repoMock.Verify(repo => repo.Update(It.Is<Student>(student =>  student == s)), Times.Once);
+
+        }
+
         
     }
 }
