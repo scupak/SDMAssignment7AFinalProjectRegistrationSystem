@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Core.Interfaces;
 using Core.Interfaces.ApplicationService;
 using Core.Services;
@@ -110,7 +111,14 @@ namespace XUnitTestProject
 
             Student s = new Student()
             {
-                StudentId = 1
+                StudentId = 1, 
+                ZipCode = 4356,
+                Name = "mike", 
+                Address = "stuff 35", 
+                PostalDistrict = "NU"
+
+
+
 
             };
 
@@ -121,6 +129,43 @@ namespace XUnitTestProject
 
             // asset 
             repoMock.Verify(repo => repo.Update(It.Is<Student>(student =>  student == s)), Times.Once);
+
+        }
+
+        [Fact]
+        public void UpdateArgumentExceptionExeptionTest()
+        {
+            // arrange
+            IStudentRepository repo = repoMock.Object; 
+            IStudentService service = new StudentService(repo);
+
+            Student s = new Student()
+            {
+                StudentId = 1, 
+                ZipCode = 4356,
+                Address = "stuff 35", 
+                PostalDistrict = "NU"
+
+
+
+
+            };
+
+
+
+            // act
+            var ex = Assert.Throws<InvalidDataException>(() =>
+            {
+                service.Update(s);
+            });
+
+
+            //assert
+            // assert
+            Assert.Equal("missing mandatory fields", ex.Message);
+
+            
+
 
         }
 
