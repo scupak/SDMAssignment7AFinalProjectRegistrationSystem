@@ -43,7 +43,7 @@ namespace Core.Services
 
        public void Update(Student s)
        {
-           if (s.StudentId < 1 || s.Name == null || s.Address == null || s.ZipCode < 1 || s.PostalDistrict == null || s.Email == null )
+           if (s.StudentId < 1 || s.Name == null || s.Address == null || s.ZipCode < 1 || s.PostalDistrict == null)
            {
                 throw new InvalidDataException("missing mandatory fields");
 
