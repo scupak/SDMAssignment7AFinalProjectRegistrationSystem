@@ -22,7 +22,7 @@ namespace Core.Services
 
        public Student GetById(int id)
        {
-           throw new NotImplementedException();
+           return Repository.GetById(id);
        }
 
        public void Add(Student s)
