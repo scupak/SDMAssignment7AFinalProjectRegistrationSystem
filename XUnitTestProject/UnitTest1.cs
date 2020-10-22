@@ -23,6 +23,7 @@ namespace XUnitTestProject
             repoMock.SetupAllProperties();
 
             repoMock.Setup(x => x.GetAll()).Returns(() => dataStore.ToArray());
+           
         }
 
         [Fact]
@@ -47,6 +48,24 @@ namespace XUnitTestProject
         }
 
         [Fact]
+        public void GetByIdTest()
+        {
+            // arrange
+            IStudentRepository repo = repoMock.Object;
+            IStudentService service = new StudentService(repo);
+
+            
+
+            // act
+            service.GetById(1);
+
+            // asset 
+            repoMock.Verify(repo => repo.GetById(It.Is<int>(id => id == 1)), Times.Once);
+
+        }
+
+        
+          [Fact]
         public void GetAllTest()
         {
             // arrange
