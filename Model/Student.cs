@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Services
 {
-    class Student
+  public class Student
     {
     }
 }
