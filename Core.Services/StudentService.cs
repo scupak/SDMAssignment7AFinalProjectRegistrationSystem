@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using Core.Interfaces;
 using Core.Interfaces.ApplicationService;
@@ -42,7 +43,13 @@ namespace Core.Services
 
        public void Update(Student s)
        {
-           throw new NotImplementedException();
+           if (s.StudentId < 1 || s.Name == null || s.Address == null || s.ZipCode < 1 || s.PostalDistrict == null || s.Email == null )
+           {
+                throw new InvalidDataException("missing mandatory fields");
+
+           }
+
+           Repository.Update(s);
        }
 
        public void Remove(Student s)
