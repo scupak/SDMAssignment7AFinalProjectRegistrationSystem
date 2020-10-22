@@ -116,7 +116,8 @@ namespace XUnitTestProject
 
         }
 
-        [Fact]
+        
+          [Fact]
         public void GetAllTest()
         {
             // arrange
