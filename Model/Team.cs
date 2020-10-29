@@ -5,7 +5,7 @@ using Core.Services;
 
 namespace Model
 {
-    class Team
+   public class Team
     {
         public int TeamId { get; set;}
 
