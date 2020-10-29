@@ -9,14 +9,15 @@ using Xunit;
 
 namespace XUnitTestProject
 {
+    //This class tests the student service class in the core. 
     //Random change. 
-    public class UnitTest1
+    public class StudentServiceTest
     {
         // Fake store for repository
         private List<Student> dataStore;
         private Mock<IStudentRepository> repoMock;
 
-        public UnitTest1()
+        public StudentServiceTest()
         {
             dataStore = new List<Student>();
 
