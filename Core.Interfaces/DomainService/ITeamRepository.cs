@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Core.Services;
+using Model;
 
 namespace Core.Interfaces.DomainService
 {
@@ -11,6 +13,7 @@ namespace Core.Interfaces.DomainService
          void Update(Team t); 
          void Remove(Team t);
          IEnumerable<Team> GetAll();
-         Team GetById(int id); 
+         Team GetById(int id);
+         IEnumerable<Student> AssignedStudents();
     }
 }

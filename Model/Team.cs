@@ -7,9 +7,9 @@ namespace Model
 {
    public class Team
     {
-        public int TeamId { get; set;}
+        public int Id{ get; set;}
 
-        public List<Student>  ListOfStudents { get; set; }
+        public List<Student>  Students { get; set; }
 
 
     }
