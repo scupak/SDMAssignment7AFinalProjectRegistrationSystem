@@ -7,7 +7,7 @@ namespace Core.Interfaces
 {
     public interface IStudentRepository
     {
-        //lollol
+        //lollollol
         IEnumerable<Student> GetAll();
         Student GetById(int id);
         void Add(Student s);
