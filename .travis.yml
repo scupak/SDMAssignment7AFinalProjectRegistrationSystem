@@ -9,7 +9,7 @@ addons:
 
 language: csharp
 mono: none
-solution: FinalProjectRegistration.sln
+solution: FinalProjectRegistrationSystem/FinalProjectRegistration.sln
 
 before_script:
   sudo snap alias dotnet-sdk.dotnet dotnet
