@@ -6,5 +6,6 @@ namespace Core.Services
 {
   public  class CompanyService
     {
+        //build test
     }
 }
