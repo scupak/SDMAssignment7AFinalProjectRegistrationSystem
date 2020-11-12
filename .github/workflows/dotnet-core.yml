@@ -3,7 +3,7 @@ name: .NET Core
 on:
   push:
     branches: [ Develop/*]
-  pull_request_target:
+  pull_request:
     branches: [ Develop, main ]
 
 jobs:
