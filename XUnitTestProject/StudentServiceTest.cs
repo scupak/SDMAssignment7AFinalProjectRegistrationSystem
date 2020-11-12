@@ -255,36 +255,7 @@ namespace XUnitTestProject
 
         }
 
-        [Fact]
-        public void RemoveTest2()
-        {
-            // arrange
-            IStudentRepository repo = repoMock.Object;
-            IStudentService service = new StudentService(repo);
-
-            Student s = new Student()
-            {
-                StudentId = 1,
-                ZipCode = 4356,
-                Name = "mike",
-                Address = "stuff 35",
-                PostalDistrict = "NU"
-
-
-
-
-
-            };
-
-
-
-            // act
-            service.Remove(s);
-
-            // asset 
-            repoMock.Verify(repo => repo.Remove(It.Is<Student>(student => student == s)), Times.Once);
-
-        }
+       
 
     }
 }
