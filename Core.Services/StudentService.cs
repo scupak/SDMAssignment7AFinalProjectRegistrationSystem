@@ -6,7 +6,7 @@ using Core.Interfaces;
 using Core.Interfaces.ApplicationService;
 
 namespace Core.Services
-{
+{//llllllllll
    public class StudentService : IStudentService
    {
        private IStudentRepository Repository;
