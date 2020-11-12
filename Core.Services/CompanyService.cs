@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Services
 {
-  public  class CompanyService
+  public class CompanyService
     {
         //build test3
     }
