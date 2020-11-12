@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Services
+namespace Core.Interfaces.ApplicationService
 {
-  public class CompanyService
+    interface ICompanyService
     {
-        //build test3
     }
 }
