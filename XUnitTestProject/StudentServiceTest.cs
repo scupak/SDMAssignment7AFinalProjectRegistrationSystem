@@ -12,6 +12,7 @@ namespace XUnitTestProject
     //This class tests the student service class in the core. 
     //Random change. 
     //why would you do this??????
+    //stuff
     public class StudentServiceTest
     {
         // Fake store for repository
@@ -254,7 +255,36 @@ namespace XUnitTestProject
             repoMock.Verify(repo => repo.Remove(It.Is<Student>(student => student == s)), Times.Once);
 
         }
+        [Fact]
+        public void RemoveTest2()
+        {
+            // arrange
+            IStudentRepository repo = repoMock.Object;
+            IStudentService service = new StudentService(repo);
 
+            Student s = new Student()
+            {
+                StudentId = 1,
+                ZipCode = 4356,
+                Name = "mike",
+                Address = "stuff 35",
+                PostalDistrict = "NU"
+
+
+
+
+
+            };
+
+
+
+            // act
+            service.Remove(s);
+
+            // asset 
+            repoMock.Verify(repo => repo.Remove(It.Is<Student>(student => student == s)), Times.Once);
+
+        }
        
 
     }
