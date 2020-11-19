@@ -12,6 +12,7 @@ namespace XUnitTestProject
     //This class tests the student service class in the core. 
     //Random change. 
     //why would you do this??????
+    //stuff
     public class StudentServiceTest
     {
         // Fake store for repository
